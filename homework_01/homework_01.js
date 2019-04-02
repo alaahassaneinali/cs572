@@ -42,27 +42,34 @@ const promiseFilterWords = (str, bannWords) => {
  
 
 
-// Observable v1
+// Observable Version1
 const {from} =rxjs;
 from(promiseFilterWords(str,bannWords)).subscribe((e=>console.log("Output Observable: "+e)));
 
+   // using Observable Version2
+   const { Observable } = rxjs;
+   const obj$ = Observable.create(
+       function(observer){
+            observer.next(str.filterWords(bannWords));  
+            observer.complete();
+       }
+   );
+   const subscription = obj$.subscribe(
+       function (x) {console.log(`Observable result: ${x}`);},
+       function (err) {console.log(`Observable error: ${err}`);},
+       function() { console.log("Done.")}
+   );
+   // how to make it Async
+   console.log("after Observable version2 Synchronus Version");
 
-
-// // Observable v2
+// Observable Version3
 const {of} =rxjs;
 const {map,flatMap,mergeAll}=rxjs.operators;
 const ar=str.split(" ");
 const ar2=[...ar];
-//console.log([...ar2]);
-
-function fn(x,y,z){
-console.log(x + " "+y+" "+z);
-}
-
 of(...ar2)
 .pipe(       
-    map(wo=>bannWords.includes(wo)? "***":wo) 
-    
+    map(wo=>bannWords.includes(wo)? "***":wo)     
 )
 .subscribe(
     (res) =>console.log("Output Obser 2: "+ res),
@@ -70,10 +77,7 @@ of(...ar2)
     ()=>console.log("Done")
 )
 
-//console.log("after Observable 2");
-
-
-// // isWeekend function
+// isWeekend function
 function isWeekend(){
     const todayDate=new Date();
     const day=todayDate.getDay();
@@ -100,9 +104,7 @@ const item={
     "category":"Food",
     "price":"200",
 }
-function applyCoupon(item){
-
-    
+function applyCoupon(item){    
     return function(discount){
         price=0;
         item.price=item.price- (item.price *(discount/100));
