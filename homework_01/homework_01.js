@@ -42,7 +42,7 @@ const promiseFilterWords = (str, bannWords) => {
  
 
 
-// Observable Version1
+//Observable Version1
 const {from} =rxjs;
 from(promiseFilterWords(str,bannWords)).subscribe((e=>console.log("Output Observable: "+e)));
 
@@ -60,16 +60,17 @@ from(promiseFilterWords(str,bannWords)).subscribe((e=>console.log("Output Observ
        function() { console.log("Done.")}
    );
    // how to make it Async
-   console.log("after Observable version2 Synchronus Version");
+   //console.log("after Observable version2 Synchronus Version");
 
 // Observable Version3
 const {of} =rxjs;
-const {map,flatMap,mergeAll}=rxjs.operators;
+const {map,flatMap,mergeAll,reduce}=rxjs.operators;
 const ar=str.split(" ");
 const ar2=[...ar];
 of(...ar2)
 .pipe(       
-    map(wo=>bannWords.includes(wo)? "***":wo)     
+    map(wo=>bannWords.includes(wo)? "***":wo),
+    reduce((w1, w2)=> w1 + ' ' + w2)    
 )
 .subscribe(
     (res) =>console.log("Output Obser 2: "+ res),

@@ -1,0 +1,1 @@
+create two asyncronus functions even() and odd() to be extended in Array Object using prototype and using stream for filtering
