@@ -1,27 +1,9 @@
-//Get All Grades
-// post new Grade
+
 
 POST http://localhost:3000/grades HTTP/1.1
-content-type: application/json
 
-null
-
-
-DELETE http://localhost:3000/grades/3 HTTP/1.1
-
-
-PUT http://localhost:3000/grades/2 HTTP/1.1
-content-type: application/json
-
-{
-"id":"2",
-"name":"Salah",
-"course":"ChampionLeauge",
-"grade":100
-}
-
-
-
+?name=Asaad
+###
 POST http://localhost:3000/grades HTTP/1.1
 content-type: application/json
 
@@ -40,8 +22,35 @@ content-type: application/json
 }
 ]
 
+###
+POST http://localhost:3000/grades HTTP/1.1
+content-type: application/json
+
+{
+"id":"2",
+"name":"Salah",
+"course":"ChampionLeauge",
+"grade":100
+}
+
+###
+DELETE http://localhost:3000/grades/3 HTTP/1.1
+
+###
+PUT http://localhost:3000/grades/2 HTTP/1.1
+content-type: application/json
+
+{
+"id":"2",
+"name":"Salah",
+"course":"ChampionLeauge",
+"grade":100
+}
+
+###
 GET http://localhost:3000/grades/ HTTP/1.1
 
+###
 //Get One Grade by ID
 GET http://localhost:3000/grades/1 HTTP/1.1
 
