@@ -1,0 +1,47 @@
+//Get All Grades
+// post new Grade
+
+POST http://localhost:3000/grades HTTP/1.1
+content-type: application/json
+
+null
+
+
+DELETE http://localhost:3000/grades/3 HTTP/1.1
+
+
+PUT http://localhost:3000/grades/2 HTTP/1.1
+content-type: application/json
+
+{
+"id":"2",
+"name":"Salah",
+"course":"ChampionLeauge",
+"grade":100
+}
+
+
+
+POST http://localhost:3000/grades HTTP/1.1
+content-type: application/json
+
+[
+{
+"id":4,
+"name":"Ari",
+"course":"EA",
+"grade":"100"
+},
+{
+"id":5,
+"name":"Jac",
+"course":"WAA",
+"grade":78
+}
+]
+
+GET http://localhost:3000/grades/ HTTP/1.1
+
+//Get One Grade by ID
+GET http://localhost:3000/grades/1 HTTP/1.1
+
