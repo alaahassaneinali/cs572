@@ -1,0 +1,27 @@
+
+Books Collection
+{
+    _id:<ObjectId>,  
+    isbn:'3221-213-231'
+    title:'Algo',
+    authors:[ {first:'Alaa',last:'Hass'},
+               {first:'Ari',last:'DAV'}],
+      tags:['NN','BinarySearch','tree'] ,
+      copies:7,
+      borrowInfo:[ 
+                  {name:'s1',phone:'9768656',retrnDate:'',isReturned:0}      ]   
+}
+
+Student Collection
+{
+    _id:<ObjectId>,  
+    name:'s1',
+    email:'s1@mum.edu',
+    phone:'9768656'    
+}
+
+using index for tags for searching by students or users
+using index for isbn to help librarian find out borowwed books quickly.
+
+
+
