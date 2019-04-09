@@ -12,16 +12,16 @@ POST http://localhost:3000/lectures HTTP/1.1
 content-type: application/json
 
 {
-"course":"Ari",
-"lecture":"1"
+"course":"BDA",
+"lecture":"5"
 }
 
 ###
-PUT http://localhost:3000/lectures/Ari HTTP/1.1
+PUT http://localhost:3000/lectures/BDA HTTP/1.1
 content-type: application/json
 
 {
-"course":"AriOP",
+"course":"BDA ADVANCED",
 "lecture":"1000"
 }
 
@@ -29,6 +29,7 @@ content-type: application/json
 DELETE http://localhost:3000/lectures/Ari HTTP/1.1
 
 ###
-POST http://localhost:3000/search/i HTTP/1.1
+// SEARCH 
+POST http://localhost:3000/search/BD HTTP/1.1
 
 

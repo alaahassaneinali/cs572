@@ -52,7 +52,6 @@ app.get('/lectures/:course',function(req,res){
 
 app.post('/lectures',function(req,res){ 
     collection.save(req.body);
-
     res.json(req.body);
     res.end();
   }
@@ -65,8 +64,7 @@ app.put('/lectures/:course',function(req,res){
     var newvalues = { $set: req.body };
 
     collection.updateOne(myquery, newvalues, function(err, res) {
-        if (err) throw err;
-
+        if (err) throw err;      
         console.log("UpdateOne:");
         console.log(req.body);
        
@@ -88,11 +86,10 @@ app.delete('/lectures/:course',function(req,res){
 
 app.post('/search/:q',function(req,res){   
     const patt=req.params.q; 
-  
-   collection.find({course:{$regex:patt}}).forEach(function(doc) {   
-       console.log('Found :');
-   console.log(doc);  
-  }); 
+    collection.find({course:{$regex:patt}}).toArray(function(err,doc) {   
+      res.json(doc);
+      res.end();
+ });  
 }
 );
 

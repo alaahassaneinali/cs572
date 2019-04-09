@@ -1,5 +1,5 @@
 
-Books Collections
+Books Collection
 {
     _id:<ObjectId>,  
     isbn:'3221-213-231'
@@ -7,6 +7,7 @@ Books Collections
     authors:[ {first:'Alaa',last:'Hass'},
                {first:'Ari',last:'DAV'}],
       tags:['NN','BinarySearch','tree'] ,
+      copies:7,
       borrowInfo:[ 
                   {name:'s1',phone:'9768656',retrnDate:'',isReturned:0}      ]   
 }
