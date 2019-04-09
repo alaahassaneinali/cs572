@@ -33,21 +33,18 @@ client.connect(function(err){
 
 //Get
 app.get('/lectures',function(req,res){
-    let data=[];
-    collection.find({}).forEach(function(doc) {
-       // console.log(Object.prototype.toString.call(doc));
-       console.log(doc);
-      data.push(doc);
-      }); 
- res.send(data);
- res.end(); 
+   const da= collection.find({}).toArray(function(err,docs) {
+        res.json(docs);
+        res.end(); 
+        }); 
 }
 );
 
 app.get('/lectures/:course',function(req,res){   
     const cou=req.params.course; 
-   collection.find({course:cou}).forEach(function(doc) {   
-   console.log(doc);  
+   collection.find({course:cou}).toArray(function(err,doc) {   
+    res.json(doc);
+    res.end(); 
   }); 
 }
 );
@@ -55,8 +52,10 @@ app.get('/lectures/:course',function(req,res){
 
 app.post('/lectures',function(req,res){ 
     collection.save(req.body);
-    console.log(req.body);
-}
+
+    res.json(req.body);
+    res.end();
+  }
 );
 
 // Put

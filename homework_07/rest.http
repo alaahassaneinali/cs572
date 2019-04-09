@@ -4,7 +4,7 @@ GET http://localhost:3000/lectures/ HTTP/1.1
 
 ###
 //Get BY Course
-GET http://localhost:3000/lectures/Algorithm HTTP/1.1
+GET http://localhost:3000/lectures/MWA HTTP/1.1
 
 
 ###
