@@ -15,9 +15,14 @@ app.use(cors());
 var urlencodedParser = express.urlencoded({extended: true});
 app.use(urlencodedParser);
 
-
+// remote
 const MongoClient = require('mongodb').MongoClient;
-const client=new MongoClient('mongodb://localhost:27017', { useNewUrlParser: true });    
+const uri = "mongodb+srv://test:test@cluster0-rz5ea.mongodb.net/test?retryWrites=true";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+
+// local
+//const MongoClient = require('mongodb').MongoClient;
+//const client=new MongoClient('mongodb://localhost:27017', { useNewUrlParser: true });    
 let db;
 let collection;
 client.connect(function(err){
@@ -32,7 +37,7 @@ app.get('/lectures',function(req,res){
     collection.find({}).forEach(function(doc) {
        // console.log(Object.prototype.toString.call(doc));
        console.log(doc);
-      // data.push(doc);
+      data.push(doc);
       }); 
  res.send(data);
  res.end(); 
@@ -93,3 +98,12 @@ app.post('/search/:q',function(req,res){
 );
 
 app.listen(3000,()=>console.log("Listening to 3000"));
+
+// const MongoClient = require(‘mongodb’).MongoClient;
+// const uri = "mongodb+srv://alaa:<password>@cluster0-rz5ea.mongodb.net/test?retryWrites=true";
+// const client = new MongoClient(uri, { useNewUrlParser: true });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
