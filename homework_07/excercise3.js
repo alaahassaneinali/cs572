@@ -82,9 +82,11 @@ app.delete('/lectures/:course',function(req,res){
 );
 
 
-app.get('/search/:q',function(req,res){   
-    const cou=req.params.q; 
-   collection.find({course:cou}).forEach(function(doc) {   
+app.post('/search/:q',function(req,res){   
+    const patt=req.params.q; 
+  
+   collection.find({course:{$regex:patt}}).forEach(function(doc) {   
+       console.log('Found :');
    console.log(doc);  
   }); 
 }

@@ -21,14 +21,14 @@ PUT http://localhost:3000/lectures/Ari HTTP/1.1
 content-type: application/json
 
 {
-"course":"Ari",
+"course":"AriOP",
 "lecture":"1000"
 }
 
 ###
 DELETE http://localhost:3000/lectures/Ari HTTP/1.1
 
-
-
+###
+POST http://localhost:3000/search/i HTTP/1.1
 
 
