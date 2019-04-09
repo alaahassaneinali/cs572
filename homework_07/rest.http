@@ -1,0 +1,34 @@
+###
+// get All
+GET http://localhost:3000/lectures/ HTTP/1.1
+
+###
+//Get BY Course
+GET http://localhost:3000/lectures/Algorithm HTTP/1.1
+
+
+###
+POST http://localhost:3000/lectures HTTP/1.1
+content-type: application/json
+
+{
+"course":"Ari",
+"lecture":"1"
+}
+
+###
+PUT http://localhost:3000/lectures/Ari HTTP/1.1
+content-type: application/json
+
+{
+"course":"Ari",
+"lecture":"1000"
+}
+
+###
+DELETE http://localhost:3000/lectures/Ari HTTP/1.1
+
+
+
+
+
