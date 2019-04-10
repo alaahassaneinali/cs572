@@ -11,17 +11,17 @@ content-type: application/json
   {    
     "name": "WaleMart",
     "category": "Market",
-    "location": "[-91.993186,41.008382]"
+    "location": [-91.993186,41.008382]
   },
   {
     "name": "MUM",
     "category": "University",
-    "location": "[-91.967291,41.018059]"
+    "location": [-91.967291,41.018059]
   },
   {
     "name": "Des Monnes",
     "category": "City",
-    "location": "[-93.6765561,41.5667771]"
+    "location": [-93.6765561,41.5667771]
   }
 ]
 
@@ -32,5 +32,5 @@ content-type: application/json
 {
     "name": "MUM",
     "category": "University",
-    "location": "[-91.967291,41.018059]"
+    "location": [-91.967291,41.018059]
   }

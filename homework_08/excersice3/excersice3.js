@@ -29,18 +29,14 @@ let collection;
 client.connect(function(err){
      db=client.db('locDB');
      collection=db.collection('locations');     
-    // collection.createIndex({'name':1});
-     //console.dir(collection.indexes());
+    collection.createIndex({'location':'2d'});
     });    
-
 
 app.get('/locations',function(req,res){
   collection.find({}).limit(10).toArray(function(err,docs) {
       res.json(docs);
       res.end(); 
-       }); 
-
-      
+       });       
 }
 );
 
@@ -57,15 +53,14 @@ app.post('/locations',function(req,res){
 
 app.post('/find',function(req,res){ 
 
-  const curObj=JSON.parse(req.body);
+  const curObj=req.body;
   const  currLog=curObj.location[0];
   const  currLat=curObj.location[1];
-  const query={location:{$near:currLog,currLat}};
-  collection.find(query).limit(3).toArray(function(err,docs) {
+
+  collection.find({'location':{$near:{currLog,currLat}}}).limit(2).toArray(function(err,docs) {
       res.json(docs);
       res.end(); 
        }); 
-
   }
 );
 
