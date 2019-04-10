@@ -1,0 +1,15 @@
+
+###
+GET  http://localhost:3000/query1 HTTP/1.1
+content-type: application/json
+
+###
+GET  http://localhost:3000/query2 HTTP/1.1
+content-type: application/json
+
+###
+GET  http://localhost:3000/query3 HTTP/1.1
+content-type: application/json
+###
+GET  http://localhost:3000/query4 HTTP/1.1
+content-type: application/json
