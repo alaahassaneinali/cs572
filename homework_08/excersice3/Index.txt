@@ -1,0 +1,3 @@
+creating index in the shell
+db.restaurants.createIndex({location:'2d'});
+result will be sorted by increasing distance (closest to furthest)
