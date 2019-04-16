@@ -1,1 +1,11 @@
 node_modules/
+e2e/
+environments/
+assets/
+tslint.json
+tsconfig.spec.json
+tsconfig.app.json
+test.ts
+tslint.json
+karma.conf.js
+browserslist
