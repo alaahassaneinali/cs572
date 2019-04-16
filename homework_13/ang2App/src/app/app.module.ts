@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SmartComponent } from './smart/smart.component';
 import { DumbComponent } from './dumb/dumb.component';
+import { IsVisibleDirective } from './is-visible.directive';
+import { MakeBiggerDirective } from './make-bigger.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     SmartComponent,
-    DumbComponent
+    DumbComponent,
+    IsVisibleDirective,
+    MakeBiggerDirective
   ],
   imports: [
     BrowserModule,
